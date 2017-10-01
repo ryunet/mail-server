@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 RUN set -ex && \
     apt-get update && \
-    apt-get install -y supervisor ca-certificates python git --no-install-recommends && \
+    apt-get install -y apt-utils supervisor ca-certificates python git build-essential python-dev libxml2-dev libxslt-dev libjpeg-dev librrd-dev rrdtool libffi-dev  && \
     apt-get clean && \
     git clone https://github.com/modoboa/modoboa-installer.git /usr/src/app/ && \
     ./run.py --force localhost
